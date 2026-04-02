@@ -13,165 +13,185 @@
         <meta http-equiv="pragma" content="no-cache" />
 
         <style>
-            .staticrypt-hr {
-                margin-top: 20px;
-                margin-bottom: 20px;
-                border: 0;
-                border-top: 1px solid #eee;
-            }
+            * { margin: 0; padding: 0; box-sizing: border-box; }
 
-            .staticrypt-page {
-                width: 360px;
-                padding: 8% 0 0;
-                margin: auto;
-                box-sizing: border-box;
-            }
-
-            .staticrypt-form {
-                position: relative;
-                z-index: 1;
-                background: #ffffff;
-                max-width: 360px;
-                margin: 0 auto 100px;
-                padding: 45px;
-                text-align: center;
-                box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
-            }
-
-            .staticrypt-form input[type="password"],
-            input[type="text"] {
-                background: inherit;
-                border: 0;
-                box-sizing: border-box; /* This ensures padding is included in the total width */
-                font-size: 14px;
-                outline: 0;
-                padding: 15px 30px 15px 15px; /* Adjust the padding to ensure there is space for the icon */
-                width: 100%;
-            }
-
-            .staticrypt-password-container {
-                position: relative;
-                outline: 0;
-                background: #f2f2f2;
-                width: 100%;
-                border: 0;
-                margin: 0 0 15px;
-                box-sizing: border-box;
-            }
-
-            .staticrypt-toggle-password-visibility {
-                cursor: pointer;
-                height: 20px;
-                opacity: 60%;
-                padding: 13px;
-                position: absolute;
-                right: 0;
-                top: 50%;
-                transform: translateY(-50%);
-                width: 20px;
-            }
-
-            .staticrypt-form .staticrypt-decrypt-button {
-                text-transform: uppercase;
-                outline: 0;
-                background: #4CAF50;
-                width: 100%;
-                border: 0;
-                padding: 15px;
-                color: #ffffff;
-                font-size: 14px;
-                cursor: pointer;
-            }
-
-            .staticrypt-form .staticrypt-decrypt-button:hover,
-            .staticrypt-form .staticrypt-decrypt-button:active,
-            .staticrypt-form .staticrypt-decrypt-button:focus {
-                background: #4CAF50;
-                filter: brightness(92%);
-            }
-
-            .staticrypt-html {
-                height: 100%;
-            }
-
-            .staticrypt-body {
-                height: 100%;
-                margin: 0;
-            }
+            .staticrypt-html { height: 100%; }
+            .staticrypt-body { height: 100%; margin: 0; }
 
             .staticrypt-content {
                 height: 100%;
-                margin-bottom: 1em;
-                background: #76B852;
-                font-family: "Arial", sans-serif;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: #1e433b;
+                font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
                 -webkit-font-smoothing: antialiased;
                 -moz-osx-font-smoothing: grayscale;
             }
 
-            .staticrypt-instructions {
-                margin-top: -1em;
-                margin-bottom: 1em;
+            .tsp-card {
+                background: #162e28;
+                border-radius: 16px;
+                box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), 0 2px 8px rgba(0, 0, 0, 0.2);
+                padding: 48px 40px 36px;
+                width: 100%;
+                max-width: 400px;
+                margin: 20px;
+                text-align: center;
             }
 
-            .staticrypt-title {
-                font-size: 1.5em;
+            .tsp-logo {
+                margin-bottom: 16px;
+            }
+
+            .tsp-brand-name {
+                font-size: 13px;
+                font-variant: small-caps;
+                letter-spacing: 3px;
+                color: #ddefaf;
+                margin-bottom: 24px;
+            }
+
+            .tsp-separator {
+                border: none;
+                border-top: 1px solid #2d5c4e;
+                margin: 0 0 24px;
+            }
+
+            .tsp-title {
+                font-size: 20px;
+                font-weight: 600;
+                color: #ddefaf;
+                margin-bottom: 6px;
+            }
+
+            .tsp-subtitle {
+                font-size: 14px;
+                color: #8ab87a;
+                margin-bottom: 28px;
+            }
+
+            .staticrypt-password-container {
+                position: relative;
+                width: 100%;
+                margin-bottom: 16px;
+            }
+
+            .staticrypt-password-container input[type="password"],
+            .staticrypt-password-container input[type="text"] {
+                width: 100%;
+                padding: 14px 46px 14px 16px;
+                background: #122820;
+                border: 1.5px solid #2d5c4e;
+                border-radius: 10px;
+                color: #ddefaf;
+                font-size: 15px;
+                font-family: inherit;
+                outline: none;
+                transition: border-color 0.2s;
+            }
+
+            .staticrypt-password-container input:focus {
+                border-color: #b6d994;
+            }
+
+            .staticrypt-password-container input::placeholder {
+                color: #5a8a6a;
+            }
+
+            .staticrypt-toggle-password-visibility {
+                cursor: pointer;
+                height: 18px;
+                width: 18px;
+                opacity: 0.5;
+                padding: 0;
+                position: absolute;
+                right: 14px;
+                top: 50%;
+                transform: translateY(-50%);
+                filter: invert(90%) sepia(20%) saturate(300%) hue-rotate(50deg);
+                transition: opacity 0.2s;
+            }
+
+            .staticrypt-toggle-password-visibility:hover {
+                opacity: 0.8;
+            }
+
+            .staticrypt-decrypt-button {
+                width: 100%;
+                padding: 14px;
+                background: #b6d994;
+                color: #122820;
+                border: none;
+                border-radius: 10px;
+                font-size: 15px;
+                font-weight: 600;
+                font-family: inherit;
+                cursor: pointer;
+                transition: background 0.2s, transform 0.1s;
+                letter-spacing: 0.5px;
+            }
+
+            .staticrypt-decrypt-button:hover {
+                background: #c8e8a8;
+            }
+
+            .staticrypt-decrypt-button:active {
+                transform: scale(0.98);
             }
 
             label.staticrypt-remember {
                 display: flex;
                 align-items: center;
-                margin-bottom: 1em;
+                justify-content: center;
+                margin-bottom: 16px;
+                color: #8ab87a;
+                font-size: 13px;
+                gap: 8px;
             }
 
             .staticrypt-remember input[type="checkbox"] {
-                transform: scale(1.5);
-                margin-right: 1em;
+                transform: scale(1.2);
+                accent-color: #b6d994;
             }
 
-            .hidden {
-                display: none !important;
+            .tsp-footer {
+                margin-top: 28px;
+                font-size: 11px;
+                color: #5a8a6a;
             }
+
+            .hidden { display: none !important; }
 
             .staticrypt-spinner-container {
                 height: 100%;
                 display: flex;
                 align-items: center;
                 justify-content: center;
+                background: #1e433b;
             }
 
             .staticrypt-spinner {
                 display: inline-block;
                 width: 2rem;
                 height: 2rem;
-                vertical-align: text-bottom;
-                border: 0.25em solid gray;
-                border-right-color: transparent;
+                border: 0.25em solid #2d5c4e;
+                border-right-color: #b6d994;
                 border-radius: 50%;
-                -webkit-animation: spinner-border 0.75s linear infinite;
                 animation: spinner-border 0.75s linear infinite;
-                animation-duration: 0.75s;
-                animation-timing-function: linear;
-                animation-delay: 0s;
-                animation-iteration-count: infinite;
-                animation-direction: normal;
-                animation-fill-mode: none;
-                animation-play-state: running;
-                animation-name: spinner-border;
             }
 
             @keyframes spinner-border {
-                100% {
-                    transform: rotate(360deg);
-                }
+                100% { transform: rotate(360deg); }
             }
 
-            @media screen and (-webkit-min-device-pixel-ratio: 0) {
-                .staticrypt-form input[type="password"],
-                input[type="text"] {
-                    font-size: 16px;
+            @media (max-width: 440px) {
+                .tsp-card {
+                    padding: 36px 24px 28px;
+                    margin: 16px;
                 }
             }
-        .tsp-card{max-width:380px;margin:0 auto;background:#fff;border-radius:16px;padding:2.5rem 2rem;box-shadow:0 4px 32px rgba(0,0,0,.12);text-align:center}.tsp-logo{margin-bottom:1rem}.tsp-brand-name{font-family:'Georgia',serif;font-size:.85rem;letter-spacing:.18em;text-transform:uppercase;color:#2d6a4f;margin-bottom:1rem}.tsp-separator{border:none;border-top:1px solid #e8e8e8;margin:1rem 0}.tsp-title{font-family:'Georgia',serif;font-size:1.3rem;color:#1a1a1a;margin-bottom:.3rem}.tsp-subtitle{font-size:.85rem;color:#888;margin-bottom:1.5rem}.tsp-footer{font-size:.75rem;color:#aaa;margin-top:1.5rem}#staticrypt-form input[type=password]{width:100%;padding:.7rem 1rem;border:1.5px solid #d4e6d0;border-radius:8px;font-size:.95rem;color:#1a1a1a;background:#f9fbf9;outline:none;box-sizing:border-box}#staticrypt-form input[type=password]:focus{border-color:#2d6a4f}.staticrypt-decrypt-button{width:100%;padding:.75rem;background:#2d6a4f;color:#fff;border:none;border-radius:8px;font-size:.95rem;font-weight:600;cursor:pointer;margin-top:.75rem;letter-spacing:.02em}.staticrypt-decrypt-button:hover{background:#1f4f39}.staticrypt-password-container{position:relative}.staticrypt-toggle-password-visibility{position:absolute;right:.75rem;top:50%;transform:translateY(-50%);cursor:pointer;opacity:.5;width:18px;height:18px}body.staticrypt-body{background:linear-gradient(135deg,#f0f7f0 0%,#e8f5e8 100%);min-height:100vh;display:flex;align-items:center;justify-content:center;font-family:system-ui,sans-serif}</style>
+        </style>
     </head>
 
     <body class="staticrypt-body">
@@ -180,22 +200,43 @@
         </div>
 
         <div id="staticrypt_content" class="staticrypt-content hidden">
- <div class="tsp-card">
-  <div class="tsp-logo"><svg fill="#ddefaf" height="78" version="1.1" viewBox="0 0 297.23 450" width="52" xmlns="http://www.w3.org/2000/svg"><g><path d="M161.67,321.27L161.67,321.27V160.93l95.01,54.85V0L69.8,107.89l90.49,52.24h0.64v0H0V321.8l160.08,0L43.14,361.04C61.44,415.56,112.26,450,166.76,450c13.75,0,27.74-2.19,41.5-6.81c68.28-22.91,105.06-96.84,82.15-165.12L161.67,321.27"></path></g></svg></div>
-  <div class="tsp-brand-name">the salad project</div><hr class="tsp-separator"/>
-  <div class="tsp-title">Analytics Report</div>
-  <div class="tsp-subtitle">Enter password to access</div>
-  <form action="#" id="staticrypt-form" method="post">
-   <div class="staticrypt-password-container">
-    <input autofocus="" id="staticrypt-password" name="password" placeholder="Password" type="password"/>
-    <img alt="Show password" class="staticrypt-toggle-password-visibility" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NDAgNTEyIj48cGF0aCBkPSJNMzguOCA1LjFDMjguNC0zLjEgMTMuMy0xLjIgNS4xIDkuMlMtMS4yIDM0LjcgOS4yIDQyLjlsNTkyIDQ2NGMxMC40IDguMiAyNS41IDYuMyAzMy43LTQuMXM2LjMtMjUuNS00LjEtMzMuN0w1MjUuNiAzODYuN2MzOS42LTQwLjYgNjYuNC04Ni4xIDc5LjktMTE4LjRjMy4zLTcuOSAzLjMtMTYuNyAwLTI0LjZjLTE0LjktMzUuNy00Ni4yLTg3LjctOTMtMTMxLjFDNDY1LjUgNjguOCA0MDAuOCAzMiAzMjAgMzJjLTY4LjIgMC0xMjUgMjYuMy0xNjkuMyA2MC44TDM4LjggNS4xek0zMjAgMTEyYzc5LjUgMCAxNDQgNjQuNSAxNDQgMTQ0cy02NC41IDE0NC0xNDQgMTQ0UzE3NiAzMzYuNSAxNzYgMjU2czY0LjUtMTQ0IDE0NC0xNDR6Ii8+PC9zdmc+" title="Show password"/>
-   </div>
-   <label class="staticrypt-remember hidden" id="staticrypt-remember-label"><input id="staticrypt-remember" name="remember" type="checkbox"/> Remember me</label>
-   <input class="staticrypt-decrypt-button" type="submit" value="DECRYPT"/>
-  </form>
-  <div class="tsp-footer">© The Salad Project 2026</div>
- </div>
-</div>
+            <div class="tsp-card">
+                <div class="tsp-logo">
+                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 297.23 450" xml:space="preserve" width="52" height="78" fill="#ddefaf"><g><path d="M161.67,321.27L161.67,321.27V160.93l95.01,54.85V0L69.8,107.89l90.49,52.24h0.64v0H0V321.8l160.08,0L43.14,361.04C61.44,415.56,112.26,450,166.76,450c13.75,0,27.74-2.19,41.5-6.81c68.28-22.91,105.06-96.84,82.15-165.12L161.67,321.27"></path></g></svg>
+                </div>
+                <div class="tsp-brand-name">the salad project</div>
+                <hr class="tsp-separator" />
+                <div class="tsp-title">Analytics Report</div>
+                <div class="tsp-subtitle">Enter password to access</div>
+
+                <form id="staticrypt-form" action="#" method="post">
+                    <div class="staticrypt-password-container">
+                        <input
+                            id="staticrypt-password"
+                            type="password"
+                            name="password"
+                            placeholder="Password"
+                            autofocus
+                        />
+                        <img
+                            class="staticrypt-toggle-password-visibility"
+                            alt="Show password"
+                            title="Show password"
+                            src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NDAgNTEyIj48IS0tIUZvbnQgQXdlc29tZSBGcmVlIDYuNS4yIGJ5IEBmb250YXdlc29tZSAtIGh0dHBzOi8vZm9udGF3ZXNvbWUuY29tIExpY2Vuc2UgLSBodHRwczovL2ZvbnRhd2Vzb21lLmNvbS9saWNlbnNlL2ZyZWUgQ29weXJpZ2h0IDIwMjQgRm9udGljb25zLCBJbmMuLS0+PHBhdGggZD0iTTM4LjggNS4xQzI4LjQtMy4xIDEzLjMtMS4yIDUuMSA5LjJTLTEuMiAzNC43IDkuMiA0Mi45bDU5MiA0NjRjMTAuNCA4LjIgMjUuNSA2LjMgMzMuNy00LjFzNi4zLTI1LjUtNC4xLTMzLjdMNTI1LjYgMzg2LjdjMzkuNi00MC42IDY2LjQtODYuMSA3OS45LTExOC40YzMuMy03LjkgMy4zLTE2LjcgMC0yNC42Yy0xNC45LTM1LjctNDYuMi04Ny43LTkzLTEzMS4xQzQ2NS41IDY4LjggNDAwLjggMzIgMzIwIDMyYy02OC4yIDAtMTI1IDI2LjMtMTY5LjMgNjAuOEwzOC44IDUuMXpNMjIzLjEgMTQ5LjVDMjQ4LjYgMTI2LjIgMjgyLjcgMTEyIDMyMCAxMTJjNzkuNSAwIDE0NCA2NC41IDE0NCAxNDRjMCAyNC45LTYuMyA0OC4zLTE3LjQgNjguN0w0MDggMjk0LjVjOC40LTE5LjMgMTAuNi00MS40IDQuOC02My4zYy0xMS4xLTQxLjUtNDcuOC02OS40LTg4LjYtNzEuMWMtNS44LS4yLTkuMiA2LjEtNy40IDExLjdjMi4xIDYuNCAzLjMgMTMuMiAzLjMgMjAuM2MwIDEwLjItMi40IDE5LjgtNi42IDI4LjNsLTkwLjMtNzAuOHpNMzczIDM4OS45Yy0xNi40IDYuNS0zNC4zIDEwLjEtNTMgMTAuMWMtNzkuNSAwLTE0NC02NC41LTE0NC0xNDRjMC02LjkgLjUtMTMuNiAxLjQtMjAuMkw4My4xIDE2MS41QzYwLjMgMTkxLjIgNDQgMjIwLjggMzQuNSAyNDMuN2MtMy4zIDcuOS0zLjMgMTYuNyAwIDI0LjZjMTQuOSAzNS43IDQ2LjIgODcuNyA5MyAxMzEuMUMxNzQuNSA0NDMuMiAyMzkuMiA0ODAgMzIwIDQ4MGM0Ny44IDAgODkuOS0xMi45IDEyNi4yLTMyLjVMMzczIDM4OS45eiIvPjwvc3ZnPg=="
+                        />
+                    </div>
+
+                    <label id="staticrypt-remember-label" class="staticrypt-remember hidden">
+                        <input id="staticrypt-remember" type="checkbox" name="remember" />
+                        Remember me
+                    </label>
+
+                    <input type="submit" class="staticrypt-decrypt-button" value="DECRYPT" />
+                </form>
+
+                <div class="tsp-footer">© The Salad Project 2026</div>
+            </div>
+        </div>
 
         <script>
             // these variables will be filled when generating the file - the template format is 'variable_name'
