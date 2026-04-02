@@ -1,0 +1,28 @@
+/* ── reviews.css ── */
+/* All .review-* classes */
+
+/* ── Reviews section ── */
+.review-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:1.5rem}
+.review-card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:1.25rem 1.5rem;display:flex;flex-direction:column;gap:.75rem}
+.review-card-header{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.25rem}
+.review-card-header h4{font-size:1rem;font-weight:600;color:var(--ink)}
+.review-rating{font-size:.85rem;color:var(--muted);white-space:nowrap}
+.review-quote{font-size:.875rem;line-height:1.6;font-style:italic;color:var(--ink);padding:.5rem .75rem;border-radius:6px}
+.review-quote-positive{background:#f0fdf4;border-left:3px solid var(--secondary)}
+.review-quote-negative{background:#fef9ec;border-left:3px solid #f59e0b}
+.review-quote-danger{background:#fff1f2;border-left:3px solid #f87171}
+.review-alert{font-size:.78rem;font-weight:600;padding:.4rem .75rem;border-radius:6px;line-height:1.4}
+.review-alert-red{background:#fff1f2;color:#b91c1c}
+.review-alert-amber{background:#fef9ec;color:#92400e}
+.review-alert-green{background:#f0fdf4;color:#166534}
+.review-sentiment{font-size:.95rem;line-height:1.65;color:var(--ink)}
+.rating-footnote{font-size:.72rem;color:var(--muted);margin-top:.75rem;font-style:italic}
+@media(max-width:768px){
+  .review-grid{grid-template-columns:1fr}
+  .review-card{padding:1rem 1.1rem}
+}
+@media(max-width:480px){
+  .review-grid{grid-template-columns:1fr}
+  .review-card{padding:.9rem 1rem}
+  .review-quote{font-size:.83rem}
+}

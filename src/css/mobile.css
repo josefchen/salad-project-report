@@ -1,0 +1,33 @@
+/* ── mobile.css ── */
+/* Responsive: 768px, 480px breakpoints + print */
+
+@media print{.nav-bar{display:none}.hero{break-after:page}.section{break-inside:avoid}body{font-size:12px}}
+/* ── Mobile: .module-grid class for S07 ── */
+/* ── Responsive overrides ── */
+@media(max-width:768px){
+  .kpi-grid{grid-template-columns:repeat(2,1fr)}
+  .chart-grid-2{grid-template-columns:1fr}
+  .scorecard-grid{grid-template-columns:repeat(2,1fr)}
+  .hero h1{font-size:1.8rem}
+  .container{padding:0 1rem}
+  .module-grid{grid-template-columns:1fr}
+  .nav-bar{overflow-x:auto;-webkit-overflow-scrolling:touch;white-space:nowrap;padding:0 .5rem}
+  .nav-bar a{display:inline-block;padding:.6rem .8rem;font-size:.75rem}
+  .hero .headline{font-size:1rem}
+  .kpi-card .value{font-size:2rem}
+  .chart-card{overflow-x:auto}
+  .section-header h2{font-size:1.5rem}
+  .action-card{padding:1rem 1.25rem}
+}
+@media(max-width:480px){
+  .kpi-grid{grid-template-columns:repeat(2,1fr)}
+  .scorecard-grid{grid-template-columns:1fr}
+  .hero h1{font-size:1.4rem}
+  .hero{padding:2.5rem 0 1.5rem}
+  .hero .kpi-grid{grid-template-columns:repeat(2,1fr)}
+  .section{padding:1.75rem 0}
+  .kpi-card .value{font-size:1.7rem}
+  .chart-grid-2{grid-template-columns:1fr}
+  .review-grid{grid-template-columns:1fr}
+  .chart-card svg{max-width:100%;height:auto}
+}
