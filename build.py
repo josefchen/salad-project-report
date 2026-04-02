@@ -33,8 +33,20 @@ def main():
     js_content = read(js_path) if os.path.exists(js_path) else ''
     print(f"JS:  nav.js ({len(js_content):,} bytes)")
 
-    # 3. Read sections in order
-    section_files = sorted(glob.glob(os.path.join(SRC, 'sections', '*.html')))
+    # 3. Read sections in explicit order (exec-summary after hero, before growth)
+    section_order = [
+        '00-hero.html',
+        '00-exec-summary.html',
+        '01-growth.html',
+        '02-stores.html',
+        '02b-reviews.html',
+        '03-menu.html',
+        '04-customers.html',
+        '05-predictive.html',
+        '06-opportunities.html',
+    ]
+    section_files = [os.path.join(SRC, 'sections', f) for f in section_order
+                     if os.path.exists(os.path.join(SRC, 'sections', f))]
     sections_html = []
     for fpath in section_files:
         fname = os.path.basename(fpath)
@@ -72,7 +84,7 @@ def main():
 
     # 6. Verify
     # Check all section IDs are present
-    expected_ids = ['growth', 'stores', 'reviews', 'menu', 'customers', 'predictive', 'opportunities', 'platform']
+    expected_ids = ['exec-summary', 'growth', 'stores', 'reviews', 'menu', 'customers', 'predictive', 'opportunities', 'platform']
     missing = [sid for sid in expected_ids if f'id="{sid}"' not in output]
     if missing:
         print(f"\n⚠️  Missing section IDs: {missing}")
